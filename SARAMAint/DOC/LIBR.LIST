@@ -1,0 +1,27 @@
+# library file            :      source script / program
+
+amber.crg                 :      generateprm.pl
+amber_dummy.siz           :      generateprm.pl  
+cb.Pgrid                  :      cmpi2.f
+pb.Pgrid                  :      cmpi2.f
+pe.Pgrid                  :      cmpi2.f
+cb.trsq                   :      conv2.pl
+pb.trsq                   :      conv2.pl
+pe.trsq                   :      conv2.pl
+met.radii                 :      metsph.f
+resGbur.libr              :      resGbur.f
+cb.inc                    :      conv2.pl  
+pb.inc                    :      conv2.pl  
+pe.inc                    :      conv2.pl  
+cb.outc                   :      conv2.pl  
+pb.outc                   :      conv2.pl  
+pe.outc                   :      conv2.pl  
+Smbur1.probdist           :      calpack.pl
+Smbur2.probdist           :      calpack.pl
+Smbur3.probdist           :      calpack.pl
+Embur1.probdist           :      calelectrop.pl
+Embur2.probdist           :      calelectrop.pl
+Embur3.probdist           :      calelectrop.pl
+standard.data             :      accall.f
+vdw.radii                 :      accall.f
+dot.inp                   :      dot1.f

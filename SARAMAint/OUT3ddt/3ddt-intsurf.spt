@@ -1,0 +1,71 @@
+load surfinp.pdb
+wireframe off
+spacefill 10
+select :A
+color green
+select :B
+color pink
+select :A and    1
+color white
+select :A and    3
+color white
+select :A and    6
+color white
+select :A and    8
+color white
+select :A and   14
+color white
+select :A and   15
+color white
+select :A and   16
+color white
+select :A and   18
+color white
+select :A and   19
+color white
+select :A and   30
+color white
+select :A and   31
+color white
+select :A and   33
+color white
+select :A and   34
+color white
+select :A and   35
+color white
+select :A and   39
+color white
+select :A and   43
+color white
+select :A and   44
+color white
+select :A and   45
+color white
+select :A and   48
+color white
+select :B and   64
+color blue
+select :B and   65
+color blue
+select :B and   66
+color blue
+select :B and   68
+color blue
+select :B and   69
+color blue
+select :B and   80
+color blue
+select :B and   81
+color blue
+select :B and   83
+color blue
+select :B and   84
+color blue
+select :B and   85
+color blue
+select :B and   93
+color blue
+select :B and   94
+color blue
+select :B and   95
+color blue
