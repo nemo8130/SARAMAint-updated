@@ -1,0 +1,130 @@
+
+SARAMA -HELP
+
+$f90compiler = Name of your FORTRAN 90 compiler (preferred compilers: ifort) 
+Also works for executables compiled by gfortran, f95 etc. (ALTHOUGH NOT RECCOMENDED) 
+
+INSTALLATION:
+
+chmod +x install.csh
+
+./install.csh $f90compiler
+
+The main shell script (CPinterface.csh) is now ready to be used
+
+RUN:
+
+cp TESTPDBS/1esv.pdb .  (EXAMPLE INPUT)
+
+./CPinterface.csh -inp  [PDB_filename]
+./CPinterface.csh -inp  1esv.pdb
+./CPinterface.csh -help (for help)
+
+REFRESH: 
+
+./refresh.csh (Does not remove the executables stored in EXEC and the Library files in the current directory)
+
+CLEAN: 
+
+./clean.csh (Cleans everything and returns to the RAW downloaded state of the package) 
+
+if cleaned, 
+./install.csh  HAS TO BE EXECUTED AGAIN prior to RUN
+
+FOR AN INCOMPLETE OR ABNORMAL (INTERRUPTED) TERMINATION OF  ./CPinterface.csh  
+ENSURE TO RUN  ./clean.csh  THEN  ./install.csh PRIOR TO THE NEXT RUN OF THE PROGRAM
+ALTERNATIVELY YOU CAN ALSO run ./refresh.csh in which case you do not need to reinstall the program
+ENSURE to remove files starting with specific filenames in that case (e.g., rm -f 1esv.*)
+
+The filename can have any number of characters but must not contain any '.' (or space ' ') 
+And must have the  extension .pdb; 
+e.g., 1esv.pdb, deca.pdb, 1234.pdb, x1c3.pdb 1abc-wc.pdb 1esv-00001.pdb 1esv-energy-minimized_CHARMM.pdb etc.
+
+PDB file must not contain more than 990 amino acid residues 
+And should consist of 'two and exactly two' polypeptide chain
+Atoms must not have multiple occupancies
+residue sequence number must not exceed 3 digits (999)
+residue sequence number must not contain any non-integer characters (e.g., 42A, 78B etc)
+
+Only isolated metal ions listed (in appropriate format) in the table below will be considered
+and other hetero atoms will be ignored
+
+Metal_ion   PDB-FORMAT        CONVERTED-INTO
+============================================
+
+             atom-res                atom-res          fortran format in the pdb file (13x,a3,1x,a3)
+
+Na+          NA    NA                NA1 SOD
+Mg+2         MG    MG                MG2 MAG
+Al+3         AL   ALF                AL3 ALM
+K+           K     K                 K_1 POT
+Ca+2         CA    CA                CA2 CAL
+Mn+2         MN    MN                MN2 MNG
+Mn+3         MN   MN3                MN3 MNG
+Fe+2         FE   FE2                FE2 IRN
+Fe+3         FE    FE                FE3 IRN
+Co+2         CO    CO                CO2 COB
+Co+3         CO   3CO                CO3 COB
+Ni+2         NI    NI                NI2 NIC
+Ni+3         NI   3NI                NI3 NIC
+Cu+          CU   CU1                CU1 COP
+Cu+2         CU    CU                CU2 COP
+Zn+2         ZN    ZN                ZN2 ZNC
+Ag+          AG    AG                AG1 SLV
+Cd+2         CD    CD                CD2 CDM
+Pt+2         PT2  TPT                PT2 PLT
+Au+          AU    AU                AU1 GLD
+Au+3         AU   AU3                AU3 GLD
+Hg+2         HG    HG                HG2 MRC
+
+water coordinates are trimmed if present in the input pdb file
+since water and surface bound ligands are modeled as bulk solvent
+
+In case of missing atoms / patches of residues in the input pdb, the (Sm,Em) values may not be authentic
+
+PDB file should definitely be Hydrogen-fitted by Reduce (v.2) (available at: http://kinemage.biochem.duke.edu/downloads/software/reduce/)
+FOR MORE INSTRUCTIONS, SEE THE FILE : REDUCEv.2-DOWNLOAD.LINK in SARAMA/
+
+The program will automatically reject input pdb files in any of the following cases:
+
+1. Incorrect Filename (as specified above)
+2. Files including non-naturally occuring amino-acids (with record id 'ATOM')
+3. Files not containing 'two and exactly two' polypeptide chains
+4. Files with no Hydrogen atoms
+5. Files with Hydrogen atom types inconsistant with REDUCE, v.2 format ('H' in the 12-12 column range, e.g., HD11, HE21)
+6. Files containing more than 990 residues
+7. Files contaning residue-sequence-numbers exceeding 3 digits (999)
+8. Files containing redundant residue identities for the same residue position 
+9. If only main-chain (backbone) atoms are provided
+
+
+Atom and residue types will have to be consistent with brookhaven (PDB) format
+---------------------------------------------------------------------------
+Field |    Column    | FORTRAN |
+  No. |     range    | format  | Description
+---------------------------------------------------------------------------
+   1. |    1 -  6    |   A6    | Record ID (eg ATOM, HETATM)
+   2. |    7 - 11    |   I5    | Atom serial number
+   -  |   12 - 12    |   1X    | Blank
+   3. |   13 - 16    |   A4    | Atom name (eg " CA " , " ND1")
+   4. |   17 - 17    |   A1    | Alternative location code (if any)
+   5. |   18 - 20    |   A3    | Standard 3-letter amino acid code for residue
+   -  |   21 - 21    |   1X    | Blank
+   6. |   22 - 22    |   A1    | Chain identifier code
+   7. |   23 - 26    |   I4    | Residue sequence number
+   8. |   27 - 27    |   A1    | Insertion code (if any)
+   -  |   28 - 30    |   3X    | Blank
+   9. |   31 - 38    |  F8.3   | Atom's x-coordinate
+  10. |   39 - 46    |  F8.3   | Atom's y-coordinate
+  11. |   47 - 54    |  F8.3   | Atom's z-coordinate
+  12. |   55 - 60    |  F6.2   | Occupancy value for atom
+  13. |   61 - 66    |  F6.2   | B-value (thermal factor)
+   -  |   67 - 67    |   1X    | Blank
+  14. |   68 - 70    |   I3    | Footnote number
+---------------------------------------------------------------------------
+Residue (Sequence) Number must not exceed 3 digit (999)
+Hydrogen atom types provided in the input pdb will have to be consistent with REDUCE, v.2 
+
+A more detailed documentation is given in HELP/README.html
+
+

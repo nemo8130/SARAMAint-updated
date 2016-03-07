@@ -1,0 +1,9 @@
+Delphi (developed at the Honig's lab "http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Main_Page") 
+must be installed in your Linux OS and running under the command: delphi_static
+
+This software calculates (Linearized) Poisson-Boltzman Potential at the buried molecular interior 
+which is essential for Electrostatic Complementarity calculations.
+
+For Academic users, it could be downloaded (free) from the following URL by signing in the liscence agreement:
+
+https://bhapp.c2b2.columbia.edu/software/cgi-bin/software.pl?input=DelPhi

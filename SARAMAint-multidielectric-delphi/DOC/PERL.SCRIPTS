@@ -1,0 +1,34 @@
+# source-scripts                    : functions
+
+calelectro.pl                       : calculates PEm (Score based on electrostatics alone)
+calpack.pl                          : calculates PSm (Score based on packing alone)
+chainsplit.pl                       : Splits two chains from the input PDB (complex) 
+chfn.pl                             : check filename 
+conv2.pl                            : generates postscripts
+crmap.pl                            : Creates map of residues (renumbered from 1) for backtracing 
+cys2cyxs.pl                         : converts CYS -> CYX for disulfide bridges
+dum2pdbNC.pl                        : assigns dummy atoms
+extpot.pl                           : removes header from .pot files
+formcheck.pl                        : checks format, rejects input if not all conditions satisfied
+fracimp.pl                          : calculates Pcount (percentage count of residues falling in the improbable region of the plot)
+generateprm.pl                      : generate delphi input scripts (script1.prm, script2.prm)
+genfieldpdb.pl                      : generates source and complementary atoms for LPB potential calculation (whole chain)
+genrasscript.pl                     : generates RASMOL script (.spt) to visualize the interfacial surface in the background of the whole molecular surface 
+genresm.pl                          : generates modified .res file for DelPhi calculations
+his2hidep.pl                        : converts HIS to HID/HIE/HIP according to reduce hydrogen assignment
+intmapbury.pl                       : generates burial profile for the interfacial residues
+intres.pl                           : generates .res files for the interfacial resideus
+mapintpdb.pl                        : maps the interfacial residues alone in a pdb file renumbered from res 1
+mapresno1to1.pl                     : remaps .res file
+mapsurfpdb.pl                       : maps surface (pdb) file from res 1
+ntrename.pl                         : distinguishes N' and C' terminal residues from internal residues
+pdb2resWMchain.pl                   : generates residue sequence profile with metal and chain ID (also determines redundancy in residue sequence numbers)
+reducemap.pl                        : Remaps Hydrogens according REDUCE (v.2) format
+remapbury.pl                        : remaps burial profile according to original residue sequence numbers
+remapSm.pl                          : remaps Sm profile according to original residue sequence numbers
+remapsurf.pl                        : remaps surface file according to original residue sequence numbers
+rescut.pl                           : determines the 'TER' sequence number between the two chains
+rmgly.pl                            : removes glycines
+rungenprm.pl                        : runs delphi_static on each target residue and computes Em
+runsatv.pl                          : runs satv_package.pl for each target residue and computes Sm
+tlod.pl                             : gathers CS_l inputs for three plots 

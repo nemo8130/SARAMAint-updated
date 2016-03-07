@@ -1,0 +1,20 @@
+SARAMA essentially requires Hydrogen coordinates (geometrically fitted to X-ray structures, models or from NMR) for Complementarity calculations
+
+It is compatible and standardized with Reduce v.2 (and any subversion, e.g., 2.21, 2.14 etc) 
+(Developed at the Richardson's lab "http://kinemage.biochem.duke.edu/lab/richardson/richardson.php") 
+
+From the webpage http://kinemage.biochem.duke.edu/downloads/software/reduce/
+
+Download (wget) the binary using the following URL or compile from any of the available source suitable to your Linux OS.
+
+URL for the binary:
+
+https://mail.google.com/_/scs/mail-static/_/js/k=gmail.main.en.BftYpzIL0kY.O/m=m_i,t,it/am=PSOG-7_7gxhnuEufVPv33-8sKXb2vdy_NwEkOwHgf7P_B_D3wD71YwY/rt=h/d=1/t=zcms/rs=AItRSTOo1ateu1tmYNy-epHV6SRVfVzUEw
+
+Shared libraries (If required for your linux OS):
+compat-libstdc++-33-3.2.3-71.el7.i686.rpm 
+
+available at
+
+http://rpmfind.net/linux/rpm2html/search.php?query=libstdc%2B%2B.so.5
+

@@ -1,0 +1,44 @@
+# source-codes               :   functions
+
+accall.f                     :   Solvent Accessible Area (ASA) calculation program 1 (F.M.Richards) (includes 'accall.pars')           [1]
+buryasa.f                    :   Burial profile calculation : bur(residue X): ASA(X)/ASA(Gly-X-Gly)                                    [2]
+metcoord.f                   :   Generates metal coordination profile (if isolated metal ions are present)            
+dsl.f                        :   Identifies Disulfide bridges at 2.25 A                                                                [3]
+dot1.f                       :   Generates the van der Waals spheres of different protein atoms                                        [2]
+metsph.f                     :   Generates the van der Waals spheres of different isolated metal ions     
+conn4.f                      :   Generates the van der Waals surface of the protein                                                    [2]
+alter2m.f                    :   Alters Format of the dot surface points (from atoms to residues)                                      [2]
+satv-package.f               :   Calculates Surface Complementarities (Sm)                                                             [2]
+splitsurf.f                  :   Splits the vdw surface into individual residue surfaces (delphi input)                                [3]
+globuleN.f                   :   Estimates globularity / asymmetry and thereby decides grid size (delphi)                              [3]
+corrcoefPsplw.f              :   Calculates Pearson's CC between the two troughs of LPB potentials                                     [3]
+burdist.f                    :   Distributes residues according to burial                                                              [4-5]
+cmpi2.f                      :   Assigns grid probabilities (by interpolation) and status in CPs (calculates CS scores for each CP)    [3-5]
+tlod2.f                      :   Calculates CS_l                                                                                       [4-5]
+transreal.f                  :   Generates postscript input for plotting                                                               [4-5]
+resGbur.f                    :   Calculates rGb for the full chain                                                                     [4-5]
+delasa.f                     :   Ditermines the interfacial atoms buried upon complexation 
+intf2surf.f                  :   Generates the vdw surface of the interfacial residues 
+
+Reference : 
+
+1. Lee, B., and F. M. Richards. 1971. 
+The interpretation of protein structures: estimation of static accessibility. 
+J. Mol. Biol. 55:379–400.
+
+2. Banerjee, R., M. Sen, Bhattacharyya D., Saha P. 2003. 
+The jigsaw puzzle model: search for conformational speciﬁcity in protein interiors. 
+J. Mol. Biol. 333:211–226.
+
+3. Basu S., Bhattacharyya D., Banerjee R. 2012.
+Self-Complementarity within proteins: bridging the gap between binding and folding. 
+Biophys. J. 102:2605-2614.
+
+4. Sankar Basu*, Dhananjay Bhattacharyya, and Rahul Banerjee*, 2013
+SARAMA: A Standalone Suite of Programs for the Complementarity Plot - A Graphical Structure Validation Tool for Proteins.
+J. Bioinf. Intl. Ctrl, 2:321-323.
+
+5. Sankar Basu, Dhananjay Bhattacharyya, and Rahul Banerjee*, 2014
+Applications of the complementarity plot in error detection and structure validation of proteins.
+Indian. J. Biochem. Biophys. 51:188-200.
+

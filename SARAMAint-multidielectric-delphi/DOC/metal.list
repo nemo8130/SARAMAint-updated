@@ -1,0 +1,32 @@
+#Metal_ion   PDB-FORMAT        CONVERTED-INTO
+#============================================
+
+#Fortran format in the pdb file (12x,a4,1x,a3) -> (13x,a3,1x,a3)
+
+             atom-res                atom-res        
+
+Na+          NA    NA                NA1 SOD    
+Mg+2         MG    MG                MG2 MAG  
+Al+3         AL   ALF                AL3 ALM  
+K+           K     K                 K_1 POT  
+Ca+2         CA    CA                CA2 CAL  
+Mn+2         MN    MN                MN2 MNG  
+Mn+3         MN   MN3                MN3 MNG  
+Fe+2         FE   FE2                FE2 IRN  
+Fe+3         FE    FE                FE3 IRN  
+Co+2         CO    CO                CO2 COB  
+Co+3         CO   3CO                CO3 COB  
+Ni+2         NI    NI                NI2 NIC  
+Ni+3         NI   3NI                NI3 NIC  
+Cu+          CU   CU1                CU1 COP  
+Cu+2         CU    CU                CU2 COP  
+Zn+2         ZN    ZN                ZN2 ZNC  
+Ag+          AG    AG                AG1 SLV  
+Cd+2         CD    CD                CD2 CDM  
+Pt+2         PT1  TPT                PT2 PLT  
+Au+          AU    AU                AU1 GLD  
+Au+3         AU   AU3                AU3 GLD  
+Hg+2         HG    HG                HG2 MRC   
+
+
+

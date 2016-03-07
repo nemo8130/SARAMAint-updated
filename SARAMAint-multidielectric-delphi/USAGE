@@ -1,0 +1,20 @@
+
+USAGE:
+
+$f90compiler = Name of your FORTRAN 90 compiler (ifort : Strongly Reccomended)
+
+INSTALLATION:
+
+./install.csh $f90compiler
+
+RUN:
+
+./CPinterface.csh -inp  [PDB_filename]
+./CPinterface.csh -inp  1esv.pdb
+./CPinterface.csh -help (for help)
+
+./refresh.csh (To remove intermediate files for an interrupted or pre-terminated run of CPinterface.csh) 
+./clean.csh (to reset to the RAW / NASCENT form of the Package) 
+If Cleaned, then ensure to run install.csh prior to the next run of CPinterface.csh (see USAGE above)
+
+
