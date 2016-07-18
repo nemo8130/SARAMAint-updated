@@ -1,0 +1,83 @@
+#!/bin/bash 
+
+upath=`echo ${0/install/}`
+path=`readlink -f $upath`
+
+echo $path
+
+fort90comp=$1
+
+if [ "$#" == "0" ]; then
+echo "Fortran90 compiler not specified"
+echo "Default fortran 90 compiler: ifort"
+fort90comp=ifort
+fi
+
+chmod +x $path/CPint
+
+#chs=`which $fortcomp`
+#echo $chs
+#if [[ $chs == *"$fortcomp"* ]]; then
+
+if hash $fortcomp &>/dev/null; then
+echo "$fortcomp FOUND"
+else
+echo "$fortcomp NOT FOUND to be installed"
+exit;
+fi
+
+rm -f $path/EXEC/*.exe
+
+$fort90comp ./EXEC/dot1.f -o ./EXEC/dot1.exe
+$fort90comp ./EXEC/metcoord.f -o ./EXEC/mcoord.exe
+$fort90comp ./EXEC/metsph.f -o ./EXEC/msph.exe
+$fort90comp ./EXEC/conn4.f -o ./EXEC/conn4.exe
+$fort90comp ./EXEC/alter2m.f -o ./EXEC/alter2m.exe
+$fort90comp ./EXEC/satv-package.f -o ./EXEC/satvp.exe
+$fort90comp ./EXEC/dsl.f -o ./EXEC/dsl.exe
+$fort90comp ./EXEC/accall.f -o ./EXEC/accall.exe
+$fort90comp ./EXEC/buryasa.f -o ./EXEC/buryasa.exe
+$fort90comp ./EXEC/globuleN.f -o ./EXEC/glbN.exe
+$fort90comp ./EXEC/splitsurf.f -o ./EXEC/spl.exe
+$fort90comp ./EXEC/corrcoefPsplw.f -o ./EXEC/ccpsw.exe
+$fort90comp ./EXEC/delasa.f -o ./EXEC/delasa.exe
+$fort90comp ./EXEC/burdist.f -o ./EXEC/bdist.exe
+$fort90comp ./EXEC/cmpi2.f -o ./EXEC/cmp.exe
+$fort90comp ./EXEC/transreal.f -o ./EXEC/treal.exe
+$fort90comp ./EXEC/intf2surf.f -o ./EXEC/isurf.exe
+$fort90comp ./EXEC/tlod2.f -o ./EXEC/tlod2.exe
+$fort90comp ./EXEC/resGbur.f -o ./EXEC/rGb.exe
+
+Nfort=`ls $path/EXEC/*.f | wc -l`
+Nexec=`ls $path/EXEC/*.exe | wc -l`
+
+
+chmod +x $path/EXEC/*.pl &> /dev/null
+dos2unix $path/EXEC/*.pl &> /dev/null
+dos2unix $path/LIBR/librf.list &> /dev/null
+chmod +x $path/EXEC/*.csh &> /dev/null
+cp refresh.csh $path/EXEC/ &> /dev/null
+
+	for i in `cat $path/LIBR/librf.list`
+	do
+	dos2unix $path/LIBR/$i &> /dev/null
+	cp $path/LIBR/$i . &> /dev/null
+	done
+
+echo $Nfort $Nexec
+
+if [ "$Nexec" == "$Nfort" ]; then
+echo "Compilation Successful"
+echo ' '
+echo '================================================================================='
+echo "Ready to run CompPlot"
+echo "general usage: './CompPlot inputpdbfile' (input pdb file as a commadline argument)"
+echo "input pdb file must have the extension '.pdb' (in LOWERCASE), e.g., 2haq.pdb, 1abc-765.pdb etc"
+echo '================================================================================='
+echo ' '
+tail -12 $path/USAGE
+fi
+
+
+
+

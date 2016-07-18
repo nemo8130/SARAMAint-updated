@@ -9,12 +9,13 @@ INSTALLATION:
 
 RUN:
 
-./CPinterface.csh -inp  [PDB_filename]
-./CPinterface.csh -inp  1esv.pdb
-./CPinterface.csh -help (for help)
+./CPint -inp  [PDB_filename]
+./CPint -inp  1esv.pdb
+./CPint -help (for help)
 
-./refresh.csh (To remove intermediate files for an interrupted or pre-terminated run of CPinterface.csh) 
-./clean.csh (to reset to the RAW / NASCENT form of the Package) 
-If Cleaned, then ensure to run install.csh prior to the next run of CPinterface.csh (see USAGE above)
+./refresh (To remove intermediate files for an interrupted or pre-terminated run of CPinterface.csh) 
+./clean (to reset to the RAW / NASCENT form of the Package) 
+If Cleaned, then ensure to run install prior to the next run of CPint (see USAGE above)
+If only refreshed, no need to re-install the program
 
 
