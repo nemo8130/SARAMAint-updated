@@ -1,0 +1,5 @@
+git add *
+git commit -a -m "EXEC added"
+
+git push "https://github.com/nemo8130/SARAMAint-updated"
+
