@@ -99,7 +99,7 @@ $ cat OUT1psr/1psr.CS
  SARAMAint/README.output
 >
 
-### Reference
+### Main Reference
 
       Self-Complementarity within Proteins: Bridging the Gap between Binding and Folding
       Sankar Basu, Dhananjay Bhattacharyya, and Rahul Banerjee*
