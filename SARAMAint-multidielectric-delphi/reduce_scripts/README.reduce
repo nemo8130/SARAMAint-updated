@@ -1,0 +1,12 @@
+Run the master-script "./addH_reduce3to2.bash" on your desired PDB 
+
+THE SCRIPT IS TO ADD HYDROGENS TO A PDB FILE by REDUCE v.3 (http://kinemage.biochem.duke.edu/software/reduce.php)
+AND CHANGE THE ADDED HYDROGEN ATOM FORMAT TO MAKE THEM COMPATIBLE TO REDUCE v.2 (http://kinemage.biochem.duke.edu/downloads/software/reduce/)# CP's CAN ONLY BE RUN ON PDB FILES CONSISTANT IN HYDROGEN ATOM FORMAT TO REDUCE v.2
+DOWNLOAD REDUCE HETERO ATOM DICTIONARY LIBRARY FILE FROM http://kinemage.biochem.duke.edu/downloads/software/reduce/reduce_het_dict.txt
+AND KEEP IT IN /home/lib/ TO RUN THE FOLLOWING SCRIPT SUCCESSFULLY (ALTERNATIVELY, CHANGE PATH AND SPECIFY)
+reduce (V.3) SHOULD BE RUNNING UNDER THE COMMAND 'reduce'
+IF YOU HAVE FIXED HYDROGENS WITH REDUCE V.2, SKIP THIS STEP.
+
+See the examples of the two formats in the files specified below (to be found in this reduce_scripts/ sub-directory)
+REDUCE v.2: reducev2_example.pdb 
+REDUCE v.3: reducev3_example.pdb

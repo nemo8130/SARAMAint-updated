@@ -20,7 +20,7 @@ and just one additional package(s) to be pre-installed
 
 1. delphi v.6.2 (http://compbio.clemson.edu/delphi/) [executable_name: delphi_static / delphi95]
 
-You can either choose to run the single (SARAMA) or multi-dielctric (SARAMA-multidielctric-delphi) version
+You can either choose to run the single (SARAMA / SARAMAint) or multi-dielctric (SARAMA-multidielctric-delphi / SARAMAint-multidielctric-delphi) version
 to appropriately set the protein internal dielectric continumm at the interior / or at the interface.
 
 Users are recomended to read additional background literature before implementing the multi-dielctric Delphi-Gaussian mode here: 

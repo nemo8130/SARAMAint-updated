@@ -14,6 +14,8 @@ fort90comp=ifort
 fi
 
 chmod +x $path/CPint
+chmod +x $path/clean
+chmod +x $path/refresh
 
 #chs=`which $fortcomp`
 #echo $chs
@@ -56,6 +58,7 @@ chmod +x $path/EXEC/*.pl &> /dev/null
 dos2unix $path/EXEC/*.pl &> /dev/null
 dos2unix $path/LIBR/librf.list &> /dev/null
 chmod +x $path/EXEC/*.csh &> /dev/null
+chmod +x $path/EXEC/*.bash &> /dev/null
 cp refresh.csh $path/EXEC/ &> /dev/null
 
 	for i in `cat $path/LIBR/librf.list`

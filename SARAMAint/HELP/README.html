@@ -21,9 +21,22 @@
 <br>
 <li>'dos2unix' and (ghostscript) 'gv' should be running</li>
 <br>
-<li><a href="http://wiki.c2b2.columbia.edu/honiglab_public/index.php/Software:DelPhi">Delphi</a> must be pre-installed in the system and running under the command : delphi_static</li>
+<li><a href="http://compbio.clemson.edu/delphi">Delphi</a> must be pre-installed in the system and running under the command : delphi_static (v.4) / delphi95 (v.6.2)</li>
 <br>
 <li>Hydrogen atoms must be geometrically fixed by <a href ="http://kinemage.biochem.duke.edu/downloads/software/reduce/">REDUCE (Version 2) </a> to the input PDB file prior to calculation</li>
+<li>In case you are using <a href="http://kinemage.biochem.duke.edu/software/reduce.php">REDUCE v.3</a>, add hydrogens and then change Hydrogen atom format to make them compatible to <a href ="http://kinemage.biochem.duke.edu/downloads/software/reduce/">REDUCE v.2</a> using the master-script <b>"./addH_reduce3to2.bash"</b> present in the sub-directory: <b>reduce_scripts/</b> provided with this distribution </li>
+<li> Examples of the two formats are given in the files below (to be found in this <b>reduce_scripts/</b> sub-directory)
+<br>
+REDUCE v.2: reducev2_example.pdb 
+<br>
+REDUCE v.3: reducev3_example.pdb
+</li>
+<li>If Hydrogens are added using MD-packages like AMBER, NAMD etc. they should also be compatible to REDUCE v.2; However we encourage our users to check that and use their own scripts for these case-specific format conversions </li>
+<br>
+<li>Users now have the choice of opting for either the <b>single</b> (SARAMA / SARAMAint) or <b>multi-dielctric </b>(SARAMA-multidielctric-delphi / SARAMAint-multidielctric-delphi) versions of the package to appropriately set the protein internal dielectric at the interior / or at the interface.</li>
+<br>
+<li>Users are recomended to read additional background literature before implementing the multi-dielctric <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622359/">Delphi-Gaussian-mode<a></li>
+
 <br>
 <center><u><b><font size=5>All calculations (validation and benchmarking) were performed using <br> REDUCE version 2 to build Hydrogen atoms geometrically</font></b></u></center>
 <br>
@@ -34,25 +47,25 @@
 <li>gunzip SARAMA.tar.gz (or gunzip SARAMAint.tar.gz) <b> [</b>for <b>SARAMA</b> and <b>SARAMAint</b> respectively <b>]</b></li> 
 <li>tar -xvf SARAMA.tar (or tar -xvf SARAMAint.tar)</li>
 <li>cd SARAMA/ (or cd SARAMAint/) </li>
-<li>The main directory (<font color=purple><b><u>SARAMA</u></b></font> or <font color=purple><b><u>SARAMAint</u></b></font>) contains 4 C-shell scripts (<b>&nbsp;./install.csh,&nbsp; ./surfNelcomp.csh,&nbsp; (<u>./CPinterface.csh</u></b> in the case of <b><u>SARAMAint</u>) ./clean.csh&nbsp; ./refresh.csh</b>), sub-directories (<b><font color=blue> DOC, SRC, HELP, EXEC, LIBR, TESTPDBS </font></b>) a file <b>(README.output)</b> for the description of the output files and a brief guideline <b>(USAGE)</b> for the installation and run commands; <br> <b><u>It also contains DOWNLOAD Links for REDUCE (version 2) and DelPhi</b></u></li>
-<li><b><font color=blue>SRC</font></b>&nbsp;contains all source-codes (FORTRAN 90 programs, PERL scripts and Bourn and C shell scripts) which upon a successful run of ./install.csh will be compiled and copied to <b><font color=blue>EXEC</font></b>&nbsp; whereupon the main command script <b>./surfNelcomp.csh</b> could be run successfully</li>
-<li><b><font color=blue>TESTPDBS</font></b> contains a few examples of the input pdb file (in the correct format) (with a nested subdirectory <font color=blue><b>LARGE</b></font> containing pdb files with more than 800 residues (given in the case of <b>SARAMA</b>)) required for a succesful run of <b>./surfNelcomp.csh</b> and <b><u>./CPinterface.csh</u> <u>(SARAMAint)</u></b></li>
-<font color=blue><b>TESTPDBS</b></font> also contain another nested subdirectory named <font color=blue><b>FALSE</b></font> containing examples of pdb files formatted incorrectly (which returns error <font color=blue>LOGS</font> being failed to run by <b>./surfNelcomp.csh</b> or <b><u>./CPinterface.csh</u> <u>(SARAMAint)</u></b>)
+<li>The main directory (<font color=purple><b><u>SARAMA</u></b></font> or <font color=purple><b><u>SARAMAint</u></b></font>) contains Four shell scripts (<b>&nbsp;./install,&nbsp; ./ComplPlot,&nbsp; (<u>./CPint</u></b> in the case of <b><u>SARAMAint</u>) ./clean&nbsp; ./refresh</b>), sub-directories (<b><font color=blue> DOC, SRC, HELP, EXEC, LIBR, TESTPDBS </font></b>) a file <b>(README.output)</b> for the description of the output files and a brief guideline <b>(USAGE)</b> for the installation and run commands; <br> <b><u>It also contains DOWNLOAD Links for REDUCE (version 2) and DelPhi</b></u></li>
+<li><b><font color=blue>SRC</font></b>&nbsp;contains all source-codes (FORTRAN 90 programs, PERL scripts and Bourn and C shell scripts) which upon a successful run of ./install will be compiled and copied to <b><font color=blue>EXEC</font></b>&nbsp; whereupon the main command script <b>./ComplPlot</b> could be run successfully</li>
+<li><b><font color=blue>TESTPDBS</font></b> contains a few examples of the input pdb file (in the correct format) (with a nested subdirectory <font color=blue><b>LARGE</b></font> containing pdb files with more than 800 residues (given in the case of <b>SARAMA</b>)) required for a succesful run of <b>./ComplPlot</b> and <b><u>./CPint</u> <u>(SARAMAint)</u></b></li>
+<font color=blue><b>TESTPDBS</b></font> also contain another nested subdirectory named <font color=blue><b>FALSE</b></font> containing examples of pdb files formatted incorrectly (which returns error <font color=blue>LOGS</font> being failed to run by <b>./ComplPlot</b> or <b><u>./CPint</u> <u>(SARAMAint)</u></b>)
 <br>
 <br>
 <li><u><b>In order to intiate installation, execute the following commands</b></u></li>
 <br>
-<li>dos2unix install.csh</li>
-<li>chmod +x install.csh</li>
-<li>./install.csh &nbsp; [FORTRAN90_Compiler_name, e.g.,ifort (Strongly recommended)]</li>
+<li>dos2unix install</li>
+<li>chmod +x install</li>
+<li>./install &nbsp; [FORTRAN90_Compiler_name, e.g.,ifort (Strongly recommended)]</li>
 <br>
-<u>The main shell script (<b>./surfNelcomp.csh</b>or <b>./CPinterface.csh (SARAMAint)</b>) is now ready to be used</u><br>
+<u>The main shell script (<b>./ComplPlot</b>or <b>./CPint (SARAMAint)</b>) is now ready to be used</u><br>
 <br>
-<b>./refresh.csh</b> removes all intermediate files after a successful or otherwise failed run of the program<br>
-whereas in addition to this <b>./clean.csh</b> removes all the executables from EXEC and all the library files from the current directory<br>
-<u>Thus, if cleaned,<b>./install.csh</b>&nbsp; HAS TO BE EXECUTED PRIOR TO THE NEXT RUN OF &nbsp;<b>./surfNelcomp.csh</b>or <b>./CPinterface.csh (SARAMAint)</b></u><br>
+<b>./refresh</b> removes all intermediate files after a successful or otherwise failed run of the program<br>
+whereas in addition to this <b>./clean</b> removes all the executables from EXEC and all the library files from the current directory<br>
+<u>Thus, if cleaned,<b>./install</b>&nbsp; HAS TO BE EXECUTED PRIOR TO THE NEXT RUN OF &nbsp;<b>./ComplPlot</b>or <b>./CPint (SARAMAint)</b></u><br>
 <br>
-<u>FOR AN INCOMPLETE OR ABNORMAL (INTERRUPTED) TERMINATION OF &nbsp;<b>./surfNelcomp.csh</b>&nbsp; or <b>./CPinterface.csh (SARAMAint)</b> ENSURE TO RUN&nbsp; <b>./clean.csh</b>&nbsp; THEN &nbsp;<b>./install.csh</b>&nbsp;PRIOR TO THE NEXT RUN OF THE PROGRAM</u>
+<u>FOR AN INCOMPLETE OR ABNORMAL (INTERRUPTED) TERMINATION OF &nbsp;<b>./ComplPlot</b>&nbsp; or <b>./CPint (SARAMAint)</b> ENSURE TO RUN&nbsp; <b>./clean</b>&nbsp; THEN &nbsp;<b>./install</b>&nbsp;PRIOR TO THE NEXT RUN OF THE PROGRAM</u>
 
 
 <h3 align=center><u>Input-Output:</u></h3>
@@ -202,19 +215,19 @@ CP-status : whether the point lies in the&nbsp;<a href="http://www.cell.com/biop
 
 <h3 align=center><u>Run Commands:</u><br><br><b><u><font color=blue>SARAMA</font></u></b></h3>
 <p>
-<li>general usage   : ./surfNelcomp.csh &nbsp; -inp &nbsp; [PDB_filename]</li>
-<li>example         : ./surfNelcomp.csh &nbsp; -inp &nbsp; 2HAQ.pdb</li>
-<li>For help        : ./surfNelcomp.csh &nbsp; -help</li>
+<li>general usage   : ./ComplPlot &nbsp; -inp &nbsp; [PDB_filename]</li>
+<li>example         : ./ComplPlot &nbsp; -inp &nbsp; 2HAQ.pdb</li>
+<li>For help        : ./ComplPlot &nbsp; -help</li>
 <li>Provision for single residue calculations:</li>
-<li>usage           : ./surfNelcomp.csh &nbsp; -inp &nbsp; [PDB_filename] &nbsp; target &nbsp; ['residue_sequence_number'-'residue_identity' (in uppercase)]</li>
-<li>example         : ./surfNelcomp.csh &nbsp; -inp &nbsp; 2HAQ.pdb &nbsp; target &nbsp; 151-PHE</li>
+<li>usage           : ./ComplPlot &nbsp; -inp &nbsp; [PDB_filename] &nbsp; -tar &nbsp; ['residue_sequence_number'-'residue_identity' (in uppercase)]</li>
+<li>example         : ./ComplPlot &nbsp; -inp &nbsp; 2HAQ.pdb &nbsp; -tar &nbsp; 151-PHE</li>
 </p>
 
 <h3 align=center><b><u><font color=blue>SARAMAint</font></u></b></h3>
 <p>
-<li>usage   : ./CPinterface.csh &nbsp; -inp &nbsp; [PDB_filename]</li>
-<li>example         : ./CPinterface.csh &nbsp; -inp &nbsp; 1esv.pdb</li>
-<li>For help        : ./CPinterface.csh &nbsp; -help</li>
+<li>usage   : ./CPint &nbsp; -inp &nbsp; [PDB_filename]</li>
+<li>example         : ./CPint &nbsp; -inp &nbsp; 1esv.pdb</li>
+<li>For help        : ./CPint &nbsp; -help</li>
 </p>
 
 
