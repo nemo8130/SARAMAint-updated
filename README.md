@@ -18,7 +18,7 @@ http://www.saha.ac.in/biop/www/db/local/sarama/sarama-readme.html
 Requires PERL (v.5.8 or higher), and a fortran90 compiler (prefered: ifort)
 and just one additional package(s) to be pre-installed
 
-1. delphi v.6.2 (http://compbio.clemson.edu/delphi/) [executable_name: delphi_static / delphi95]
+1. delphi v.8.3. (http://compbio.clemson.edu/delphi) [executable_name: delphi]
 
 You can either choose to run the single (SARAMA / SARAMAint) or multi-dielctric (SARAMA-multidielctric-delphi / SARAMAint-multidielctric-delphi) version
 to appropriately set the protein internal dielectric continumm at the interior / or at the interface.

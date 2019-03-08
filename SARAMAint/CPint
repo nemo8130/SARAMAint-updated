@@ -5,7 +5,7 @@ path=`readlink -f $upath`
 
 echo $path
 
-delphip=`echo delphi_static`
+delphip=`echo delphi`
 
 sresflag=0
 
@@ -20,14 +20,14 @@ echo $delphip
 if hash $delphip &>/dev/null; then
 echo "$delphip FOUND"
 	echo '==========================================================================================================='
-	echo 'Delphi is running under the command : delphi_static'
+	echo 'Delphi is running under the command : delphi'
 	echo 'Program will run'
 	echo '==========================================================================================================='
 	echo
 else
 echo
 	echo '==========================================================================================================='
-	echo 'Delphi is not running under the command : delphi_static'
+	echo 'Delphi is not running under the command : delphi'
 	echo 'Program will exit'
 	exit
 	echo '==========================================================================================================='
@@ -805,7 +805,7 @@ echo ''
 
 echo ''
 echo '========================================================================='
-echo 'delphi_static running: Calculating linearized Poison-Boltzmaan Potentials'
+echo 'delphi running: Calculating linearized Poison-Boltzmaan Potentials'
 echo 'internal dielectric : 2, external dielectric: 80'
 echo 'For other parameters look into script_default.prm'
 echo 'To change any parameters modify the appropreate fields in generateprm.pl'
@@ -824,6 +824,7 @@ echo "with residue types temporarily converted to run delphi"
 echo "You may find 'NaN' values for exposed or terminal residues which will be taken care off later"
 echo "==================================================================="
 echo
+
 
 #======================================================================================
 $path/EXEC/rungenprm.pl intf12-m.res  $dir $gindex bury.out # internally creates script*.prm (by calling generateprm.pl) and runs delphi

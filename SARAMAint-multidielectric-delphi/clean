@@ -68,6 +68,9 @@ rm -f chfn.inp
 rm -f sres.res
 rm -f smres.res
 rm -f smresE.res
+rm -f intf12*.res
+rm -f ras*.select
+rm -f intmapped.bury
 
 echo
 echo "================================================="

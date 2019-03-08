@@ -11,11 +11,11 @@ $l1 = @dat1;
 for $i (0..$l1-1)
 {
 chomp $dat1[$i];
-	if (@dat1[$i] =~ m/^ATOM DESCRIPTOR\s+/)
+	if (@dat1[$i] =~ m/ATOM DESCRIPTOR\s+/)
 	{
 	$start = $i+1;
 	}
-	if (@dat1[$i] =~ m/^ total energy =\s+/)
+	if (@dat1[$i] =~ m/total energy =\s+/)
 	{
 	$stop = $i-1;
 	}
