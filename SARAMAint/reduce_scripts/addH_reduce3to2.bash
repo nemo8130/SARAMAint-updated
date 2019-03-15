@@ -21,7 +21,7 @@ upath=`echo ${0/\/addH_reduce3to2.bash/}`
 path=`readlink -f $upath`
 
 $path/trimH.pl $pdb > temp1
-reduce -build temp1 -DB ~/lib/reduce_het_dict.txt | awk '$1=="ATOM"' > temp2
+reduce -build temp1 -DB ~/lib/reduce_het_dict.txt | awk '$1=="ATOM" || $1=="HETATM"' > temp2
 $path/convH_reduce3.pl temp2 > temp3
 $path/delcol13.pl temp3 > $pdb
 echo "NUMBER OF ATOMS BEFORE ADDING HYDROGENS"
