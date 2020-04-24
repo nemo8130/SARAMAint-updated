@@ -23,7 +23,7 @@ $ch = substr($k,42,1);
 	$rnn = substr($b,13,3);
 	$rtn = substr($b,17,3);
 	$chn = substr($b,21,1);
-	$nstr = $rno.' '.$rto;
+	$nstr = $rno.'-'.$rto;
 		if ($rn == $rnn && $rt eq $rtn && $ch eq $chn)
 		{
 		printf "%7s%35s%1s\n",$nstr,$rest,$cho;
