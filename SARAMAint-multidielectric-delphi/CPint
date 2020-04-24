@@ -640,7 +640,7 @@ mv fort.22 $int2surf
 
 $path/EXEC/genrasscript.pl $surf1 $surf2
 
-rasmol -script view-surf.spt &
+#rasmol -script view-surf.spt &
 cp view-surf.spt $rasscript
 
 #===================================================================================================
@@ -684,6 +684,8 @@ $path/EXEC/remapSm.pl orig.res > $Smfile
 
 $path/EXEC/mapintpdb.pl 
 $path/EXEC/intmapbury.pl bury.out
+
+
 #==================================================================================================
 # ELECTROSTATIC COMPLEMENTARITY
 #==================================================================================================
@@ -837,8 +839,8 @@ $path/EXEC/renameRT.csh ccp.out
 $path/EXEC/rmgly.pl ccp.out > temp
 mv temp ccp.out
 
-cp out.satv $Smfile
-cp ccp.out $Emfile
+$path/EXEC/remapEm.pl orig.res > $Emfile
+
 
 echo "==================================================="
 echo "                     Sm           "
