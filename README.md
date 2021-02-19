@@ -1,7 +1,7 @@
 # SARAMAint
 
 A standalone suite of programs to estimate the quality of protein-protein interfaces globally as well as locally. 
-SARAMAint plots the distribution of buried amino acid residues at the Protein-Protein Interfaces in the Complementarity Plots (CPint) coupled with the analysis of hydrophobi burial profiles of the same. 
+SARAMAint plots the distribution of buried amino acid residues at the protein-protein interfaces in the Complementarity Plots (CPint) coupled with the analysis of hydrophobic burial profiles of the same. 
 
 
 ### Please be redirected to access the following CP versions from the below links:
