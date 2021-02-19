@@ -1,5 +1,4 @@
 # SARAMA (& SARAMAint)
-## Please be redirected to access CPdock from here: https://github.com/nemo8130/CPdock
 
 >
 A standalone suite of programs to plot the distribution of amino acid residues in the Complementarity Plots 
@@ -12,6 +11,8 @@ for those that are buried upon complexation, embedded at the Protein-Protein Int
 >
 [READ more] (http://www.ingentaconnect.com/content/asp/jbic/2014/00000003/00000004/art00011?token=004c1abebd13fe84c9383a4b3b25702e7b757a5a6a38572066282a72752d7bdfe8b8aaf4e2f5)
 >
+### Please be redirected to access CPdock from here: https://github.com/nemo8130/CPdock
+
 
 ## A more detailed Documentation is available here: 
 http://www.saha.ac.in/biop/www/db/local/sarama/sarama-readme.html
