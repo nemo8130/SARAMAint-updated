@@ -1,4 +1,5 @@
 # SARAMA (& SARAMAint)
+## Please be redirected to access CPdock from here: https://github.com/nemo8130/CPdock
 
 >
 A standalone suite of programs to plot the distribution of amino acid residues in the Complementarity Plots 
